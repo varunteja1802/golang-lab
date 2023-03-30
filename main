@@ -1,0 +1,26 @@
+package main
+
+import "fmt"
+
+// Function to demonstrate pass by value
+func incrementByValue(num int) {
+	num++
+}
+
+// Function to demonstrate pass by reference
+func incrementByReference(numPtr *int) {
+	*numPtr++
+}
+
+func main() {
+	// Pass by value example
+	num := 5
+	incrementByValue(num)
+	fmt.Println("After incrementByValue, num =", num) // Output: After incrementByValue, num = 5 (unchanged)
+
+	// Pass by reference example
+	num2 := 5
+	numPtr := &num2 // Get a pointer to num2
+	incrementByReference(numPtr)
+	fmt.Println("After incrementByReference, num2 =", num2) // Output: After incrementByReference, num2 = 6
+}
